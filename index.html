@@ -1,1 +1,38 @@
-<h1> My notifications from google</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gmail Notifications</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .notification { border: 1px solid #ccc; padding: 10px; margin: 10px auto; width: 80%; }
+    </style>
+</head>
+<body>
+    <h2>Gmail Notifications</h2>
+    <div id="notifications"></div>
+
+    <script>
+        async function fetchNotifications() {
+            const response = await fetch('https://your-server-or-zapier-endpoint.com/notifications');
+            const data = await response.json();
+
+            const container = document.getElementById('notifications');
+            container.innerHTML = ''; // Clear previous notifications
+
+            data.forEach(notification => {
+                const div = document.createElement('div');
+                div.classList.add('notification');
+                div.innerHTML = `<strong>From:</strong> ${notification.sender}<br>
+                                 <strong>Subject:</strong> ${notification.subject}<br>
+                                 <p>${notification.body}</p>`;
+                container.appendChild(div);
+            });
+        }
+
+        fetchNotifications();
+        setInterval(fetchNotifications, 30000); // Refresh every 30 sec
+    </script>
+</body>
+</html>
