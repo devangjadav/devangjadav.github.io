@@ -24,6 +24,60 @@
       padding: 2rem;
       animation: fadeIn 2s ease;
     }
+    .journey {
+  background: #f0fdfa;
+  padding: 4rem 2rem;
+}
+
+.journey-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.journey-step {
+  flex: 1 1 120px;
+  min-width: 120px;
+}
+
+.journey-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: popIn 0.5s ease;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #94a3b8;
+}
+
+.journey-step p {
+  margin: 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .journey-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -228,10 +282,10 @@
   <!-- Hero Partial -->
   <div class="hero">
     <div>
-      <h1>Transform Everyday Actions into <span style="color: #fb923c;">Regenerative Impact</span></h1>
-      <span>Starting in Hawaii</span>
+      <h1>Transform Everyday Actions into <span style="color: #fb923c;">Planet-Saving Rewards!</span></h1>
+      <span>Starting in Hawai‘i — Join Our Waitlist Today.</span>
       <p>Earn rewards for supporting local eco-businesses. Businesses gain visibility + verified impact reporting.</p>
-      <button class="btn btn-primary pulse" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
+      <button class="btn btn-primary pulse" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Be First to Get Early Access + Bonus Perks 🎁</button>
       <button class="btn btn-outline" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Partner With Us</button>
     </div>
   </div>
@@ -253,6 +307,36 @@
 
   <section>
     <h2 class="section-title">One Platform. Complete Impact.</h2>
+    <section class="journey">
+  <h2 class="section-title">How PerkTogether Works</h2>
+  <div class="journey-container">
+    <div class="journey-step">
+      <div class="journey-icon">🧍‍♀️</div>
+      <p>You</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">💪</div>
+      <p>Take Action</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">🏪</div>
+      <p>Local Biz Grows</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">📊</div>
+      <p>Impact Verified</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">🎁</div>
+      <p>You Earn Perks</p>
+    </div>
+  </div>
+</section>
+
     <div class="features">
       <div class="feature-card">
         <i class="fas fa-leaf fa-2x" style="color: #059669;"></i>
