@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
     }
     .hero {
-      background: linear-gradient(rgba(20, 184, 166, 0.8), rgba(5, 150, 105, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+      background: linear-gradient(rgba(20, 184, 166, 0.8), rgba(5, 150, 105, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -20,6 +21,11 @@
       color: white;
       text-align: center;
       padding: 2rem;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .hero h1 {
       font-size: 3rem;
@@ -70,6 +76,7 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 2rem;
+      animation: fadeIn 1s ease forwards;
     }
     .features {
       display: grid;
@@ -84,6 +91,10 @@
       padding: 2rem;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
     }
     .feature-card h3 {
       font-size: 1.25rem;
@@ -123,9 +134,15 @@
     footer a:hover {
       color: white;
     }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .hero span { font-size: 1.25rem; }
+      .hero p { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
+  <!-- Hero Partial -->
   <div class="hero">
     <div>
       <h1>Transform Everyday Actions into <span style="color: #fb923c;">Regenerative Impact</span></h1>
@@ -136,6 +153,7 @@
     </div>
   </div>
 
+  <!-- Features Partial -->
   <section>
     <h2 class="section-title">Sustainability is Fragmented. We Fix It.</h2>
     <div class="features">
@@ -176,12 +194,13 @@
     </div>
   </section>
 
+  <!-- CTA + Form Partial -->
   <section id="waitlist" class="cta">
     <h2 class="section-title">Be the first to join Hawaii's regenerative movement!</h2>
     <p>Get early access and help us launch the future of sustainable impact in Hawaii.</p>
-    <form onsubmit="event.preventDefault(); alert('Thanks for signing up!')">
-      <input type="email" placeholder="Your Email Address" required />
-      <select required>
+    <form action="mailto:devang@perktogether.com" method="POST" enctype="text/plain">
+      <input type="email" name="email" placeholder="Your Email Address" required />
+      <select name="userType" required>
         <option value="">I'm a...</option>
         <option value="consumer">Consumer</option>
         <option value="business">Business</option>
@@ -191,6 +210,7 @@
     </form>
   </section>
 
+  <!-- Footer Partial -->
   <footer>
     <p>© 2024 PerkTogether - Hawaii Chapter. All rights reserved.</p>
     <div>
