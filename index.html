@@ -134,6 +134,27 @@
     footer a:hover {
       color: white;
     }
+    /* NEW STYLES */
+    .message {
+      display: none;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      border-radius: 8px;
+      max-width: 500px;
+      text-align: center;
+      animation: fadeIn 0.5s ease;
+    }
+    .success {
+      background: #059669;
+      color: white;
+    }
+    .error {
+      background: #dc2626;
+      color: white;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
     @media (max-width: 640px) {
       .hero h1 { font-size: 2rem; }
       .hero span { font-size: 1.25rem; }
@@ -198,15 +219,27 @@
   <section id="waitlist" class="cta">
     <h2 class="section-title">Be the first to join Hawaii's regenerative movement!</h2>
     <p>Get early access and help us launch the future of sustainable impact in Hawaii.</p>
-    <form action="mailto:devang@perktogether.com" method="POST" enctype="text/plain">
-      <input type="email" name="email" placeholder="Your Email Address" required />
-      <select name="userType" required>
-        <option value="">I'm a...</option>
-        <option value="consumer">Consumer</option>
-        <option value="business">Business</option>
-        <option value="partner">Corporate Partner</option>
-      </select>
-      <button class="btn btn-primary" type="submit">Sign Up for Early Access</button>
+    
+    <div id="success-message" class="message success">
+      <i class="fas fa-check-circle"></i> Thank you! We've added you to our waitlist.
+    </div>
+    <div id="error-message" class="message error">
+      <i class="fas fa-exclamation-circle"></i> Please fill all fields correctly.
+    </div>
+    
+    <form id="waitlist-form">
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+      </div>
+      <div class="form-group">
+        <select id="userType" name="userType" required>
+          <option value="">I'm a...</option>
+          <option value="consumer">Consumer</option>
+          <option value="business">Business</option>
+          <option value="partner">Corporate Partner</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Join Waitlist</button>
     </form>
   </section>
 
@@ -219,5 +252,58 @@
       <a href="#">Privacy Policy</a>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide messages
+      document.getElementById('success-message').style.display = 'none';
+      document.getElementById('error-message').style.display = 'none';
+      
+      // Form validation
+      const email = document.getElementById('email').value;
+      const userType = document.getElementById('userType').value;
+      
+      if (!email || !validateEmail(email) || !userType) {
+        document.getElementById('error-message').style.display = 'block';
+        return;
+      }
+      
+      // Using Formspree.io for email submission (free service)
+      const formData = new FormData(this);
+      
+      fetch('https://formspree.io/f/mjvnlqjz', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          document.getElementById('success-message').style.display = 'block';
+          // Reset form
+          document.getElementById('waitlist-form').reset();
+          // Scroll to confirmation
+          document.getElementById('success-message').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center'
+          });
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        alert('Error: ' + error.message);
+      });
+    });
+    
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
 </body>
 </html>
