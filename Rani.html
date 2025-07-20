@@ -1,0 +1,70 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function PerkTogether() {
+  return (
+    <main className="min-h-screen bg-white text-gray-900 p-6">
+      <section className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">Perk Together</h1>
+        <p className="text-lg max-w-2xl mx-auto">
+          The sustainability rewards platform that brings communities together. Earn perks for everyday sustainable actions and support local businesses, nonprofits, and climate projects.
+        </p>
+        <Button className="mt-6">Join the Movement</Button>
+      </section>
+
+      <section className="grid gap-8 md:grid-cols-4">
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">For Consumers</h2>
+            <p>Earn points for sustainable actions like shopping local, recycling, or choosing eco-friendly travel. Redeem for perks or donate to causes you care about.</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">For Businesses</h2>
+            <p>Attract conscious customers, track sustainability impact, and showcase your green leadership. Simple, plug-and-play integration.</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">For Communities</h2>
+            <p>Perk Together helps grow local economies while reducing environmental footprint—rewarding behaviors that help build a regenerative future.</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">For Industry Partners</h2>
+            <p>Collaborate with us to scale climate solutions, support ESG initiatives, and activate sustainable consumer ecosystems across your networks and supply chains.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="mt-16 text-center">
+        <h2 className="text-2xl font-bold mb-4">Our Industry Partners</h2>
+        <p className="max-w-xl mx-auto mb-6">
+          We're proud to work alongside forward-thinking organizations driving sustainable innovation and community impact.
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-8 mb-10">
+          <img src="/logos/partner1.png" alt="Partner 1" className="h-12" />
+          <img src="/logos/partner2.png" alt="Partner 2" className="h-12" />
+          <img src="/logos/partner3.png" alt="Partner 3" className="h-12" />
+          <img src="/logos/partner4.png" alt="Partner 4" className="h-12" />
+        </div>
+        <Button>Become a Partner</Button>
+      </section>
+
+      <section className="mt-16 text-center">
+        <h2 className="text-2xl font-bold mb-4">Let’s Build a Greener Future—Together</h2>
+        <p className="max-w-xl mx-auto mb-6">
+          Whether you’re a local business, nonprofit, traveler, or resident—Perk Together makes it easy to connect, act, and grow sustainably.
+        </p>
+        <Button>Contact Us</Button>
+      </section>
+    </main>
+  );
+}
+
