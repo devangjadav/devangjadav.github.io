@@ -50,6 +50,55 @@
   margin-bottom: 0.5rem;
   animation: popIn 0.5s ease;
 }
+.share-box {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #f0fdfa;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.share-box p {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.share-btn i {
+  font-size: 1.1rem;
+}
+
+/* Platform-specific colors */
+.twitter { background: #1DA1F2; }
+.facebook { background: #1877F2; }
+.whatsapp { background: #25D366; }
+.email { background: #64748b; }
+
+.share-btn:hover {
+  opacity: 0.85;
+}
 
 .arrow {
   font-size: 2rem;
@@ -383,6 +432,48 @@
     style="border: none;" >Loading…</iframe>
       </div>
   </section>
+
+  <div class="share-box">
+  <p>📣 Share the mission with friends:</p>
+  <div class="share-buttons">
+    <a
+      href="https://twitter.com/intent/tweet?text=I%20just%20joined%20the%20@PerkTogether%20waitlist%20%E2%80%94%20earn%20perks%20for%20shopping%20local%20and%20protecting%20Hawaii%E2%80%99s%20environment%20%F0%9F%8C%B1%20%23impact&url=https%3A%2F%2Fperktogether.com"
+      target="_blank"
+      rel="noopener"
+      class="share-btn twitter"
+    >
+      <i class="fab fa-twitter"></i> Tweet
+    </a>
+
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u=https://perktogether.com"
+      target="_blank"
+      rel="noopener"
+      class="share-btn facebook"
+    >
+      <i class="fab fa-facebook"></i> Share
+    </a>
+
+    <a
+      href="https://api.whatsapp.com/send?text=Join%20me%20on%20PerkTogether!%20Earn%20rewards%20for%20shopping%20local%20and%20protecting%20Hawaii%E2%80%99s%20environment.%20https%3A%2F%2Fperktogether.com"
+      target="_blank"
+      rel="noopener"
+      class="share-btn whatsapp"
+    >
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a
+      href="mailto:?subject=Check%20out%20PerkTogether&body=Join%20me%20on%20PerkTogether!%20We%20earn%20rewards%20for%20supporting%20local%20eco-businesses%20in%20Hawaii.%20https%3A%2F%2Fperktogether.com"
+      target="_blank"
+      rel="noopener"
+      class="share-btn email"
+    >
+      <i class="fas fa-envelope"></i> Email
+    </a>
+  </div>
+</div>
+
 
   <!-- Footer Partial -->
   <footer>
