@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PerkTogether</title>
+  <title>PerkTogether - Waitlist</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -11,6 +11,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
+      background-color: #f0fdfa;
     }
     .hero {
       background: linear-gradient(rgba(20, 184, 166, 0.8), rgba(5, 150, 105, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
@@ -58,6 +59,7 @@
     }
     .btn-primary:hover {
       background-color: #f97316;
+      transform: scale(1.05);
     }
     .btn-outline {
       border: 2px solid white;
@@ -67,6 +69,7 @@
     .btn-outline:hover {
       background: white;
       color: #14b8a6;
+      transform: scale(1.05);
     }
     section {
       padding: 4rem 2rem;
@@ -107,6 +110,10 @@
       background: linear-gradient(rgba(20, 184, 166, 0.9), rgba(5, 150, 105, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
       color: white;
       text-align: center;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 4rem auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
     .cta input, .cta select {
       width: 100%;
@@ -115,6 +122,13 @@
       border-radius: 999px;
       margin-bottom: 1rem;
       font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .cta input:focus, .cta select:focus {
+      outline: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transform: scale(1.02);
     }
     .cta form {
       max-width: 500px;
@@ -130,9 +144,11 @@
       color: #cbd5e1;
       margin: 0 1rem;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
     footer a:hover {
       color: white;
+      transform: translateY(-2px);
     }
     /* NEW STYLES */
     .message {
@@ -155,10 +171,56 @@
     .form-group {
       margin-bottom: 1.5rem;
     }
+    .waitlist-container {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .waitlist-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .waitlist-header h2 {
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+    .waitlist-header p {
+      color: #64748b;
+    }
     @media (max-width: 640px) {
       .hero h1 { font-size: 2rem; }
       .hero span { font-size: 1.25rem; }
       .hero p { font-size: 1rem; }
+      .waitlist-container {
+        padding: 1.5rem;
+      }
+    }
+    
+    /* Animation for form elements */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Form labels */
+    .form-label {
+      display: block;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    
+    /* Form styling */
+    .form-input-group {
+      margin-bottom: 1.5rem;
     }
   </style>
 </head>
@@ -169,7 +231,7 @@
       <h1>Transform Everyday Actions into <span style="color: #fb923c;">Regenerative Impact</span></h1>
       <span>Starting in Hawaii</span>
       <p>Earn rewards for supporting local eco-businesses. Businesses gain visibility + verified impact reporting.</p>
-      <button class="btn btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
+      <button class="btn btn-primary pulse" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
       <button class="btn btn-outline" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Partner With Us</button>
     </div>
   </div>
@@ -215,41 +277,81 @@
     </div>
   </section>
 
-  <!-- CTA + Form Partial -->
-  <section id="waitlist" class="cta">
-    <h2 class="section-title">Be the first to join Hawaii's regenerative movement!</h2>
-    <p>Get early access and help us launch the future of sustainable impact in Hawaii.</p>
-    
-    <div id="success-message" class="message success">
-      <i class="fas fa-check-circle"></i> Thank you! We've added you to our waitlist.
-    </div>
-    <div id="error-message" class="message error">
-      <i class="fas fa-exclamation-circle"></i> Please fill all fields correctly.
-    </div>
-    
-    <form id="waitlist-form">
-      <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+  <!-- Waitlist Form Section -->
+  <section id="waitlist">
+    <div class="waitlist-container">
+      <div class="waitlist-header">
+        <h2>Join Our Waitlist</h2>
+        <p>Be the first to know when we launch in Hawaii!</p>
       </div>
-      <div class="form-group">
-        <select id="userType" name="userType" required>
-          <option value="">I'm a...</option>
-          <option value="consumer">Consumer</option>
-          <option value="business">Business</option>
-          <option value="partner">Corporate Partner</option>
-        </select>
+      
+      <div id="success-message" class="message success">
+        <i class="fas fa-check-circle"></i> Thank you! We've added you to our waitlist.
       </div>
-      <button class="btn btn-primary" type="submit">Join Waitlist</button>
-    </form>
+      <div id="error-message" class="message error">
+        <i class="fas fa-exclamation-circle"></i> Please fill all fields correctly.
+      </div>
+      
+      <form id="waitlist-form">
+        <div class="form-input-group">
+          <label class="form-label" for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Full Name" required />
+        </div>
+        
+        <div class="form-input-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+        </div>
+        
+        <div class="form-input-group">
+          <label class="form-label" for="userType">I'm a...</label>
+          <select id="userType" name="userType" required>
+            <option value="">Select your role</option>
+            <option value="consumer">Consumer</option>
+            <option value="business">Local Business Owner</option>
+            <option value="partner">Corporate Partner</option>
+            <option value="investor">Investor</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-input-group">
+          <label class="form-label" for="location">Location in Hawaii</label>
+          <select id="location" name="location">
+            <option value="">Select your island</option>
+            <option value="oahu">Oahu</option>
+            <option value="maui">Maui</option>
+            <option value="kauai">Kauai</option>
+            <option value="big island">Big Island</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-input-group">
+          <label class="form-label" for="interest">Main Interest</label>
+          <select id="interest" name="interest">
+            <option value="">What interests you most?</option>
+            <option value="rewards">Earning Rewards</option>
+            <option value="impact">Making an Impact</option>
+            <option value="business">Growing My Business</option>
+            <option value="partnership">Corporate Partnership</option>
+          </select>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" style="width: 100%; padding: 1rem; margin-top: 1rem;">
+          Join Waitlist
+        </button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer Partial -->
   <footer>
     <p>© 2024 PerkTogether - Hawaii Chapter. All rights reserved.</p>
     <div>
-      <a href="#">FAQ</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy Policy</a>
+      <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+      <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#"><i class="fas fa-lock"></i> Privacy Policy</a>
     </div>
   </footer>
 
@@ -257,46 +359,71 @@
     document.getElementById('waitlist-form').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Hide messages
+      // Hide any existing messages
       document.getElementById('success-message').style.display = 'none';
       document.getElementById('error-message').style.display = 'none';
       
       // Form validation
+      const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const userType = document.getElementById('userType').value;
       
-      if (!email || !validateEmail(email) || !userType) {
+      if (!name || !email || !validateEmail(email) || !userType) {
         document.getElementById('error-message').style.display = 'block';
         return;
       }
       
-      // Using Formspree.io for email submission (free service)
-      const formData = new FormData(this);
+      // Show loading state
+      const submitBtn = document.querySelector('#waitlist-form button[type="submit"]');
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+      submitBtn.disabled = true;
       
+      // Collect form data
+      const formData = {
+        name: name,
+        email: email,
+        userType: userType,
+        location: document.getElementById('location').value,
+        interest: document.getElementById('interest').value,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Send email using Formspree
       fetch('https://formspree.io/f/xpwlqpdj', {
         method: 'POST',
-        body: formData,
         headers: {
+          'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify(formData)
       })
       .then(response => {
         if (response.ok) {
-          // Show success message
-          document.getElementById('success-message').style.display = 'block';
-          // Reset form
-          document.getElementById('waitlist-form').reset();
-          // Scroll to confirmation
-          document.getElementById('success-message').scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center'
-          });
+          return response.json();
         } else {
           throw new Error('Form submission failed');
         }
       })
+      .then(data => {
+        // Show success message
+        document.getElementById('success-message').style.display = 'block';
+        
+        // Reset form
+        document.getElementById('waitlist-form').reset();
+        
+        // Scroll to confirmation
+        document.getElementById('success-message').scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center'
+        });
+      })
       .catch(error => {
-        alert('Error: ' + error.message);
+        console.error('Error:', error);
+        alert('There was an error submitting your form. Please try again or contact us directly at devang@perktogether.com');
+      })
+      .finally(() => {
+        submitBtn.innerHTML = 'Join Waitlist';
+        submitBtn.disabled = false;
       });
     });
     
