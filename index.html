@@ -3,86 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PerkTogether – Early Access</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>PerkTogether</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    .fade-in {
-      animation: fadeIn 1s ease-in-out;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .hero {
+      background: linear-gradient(rgba(20, 184, 166, 0.8), rgba(5, 150, 105, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 2s ease;
     }
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero span {
+      display: block;
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+    .btn-primary {
+      background-color: #fb923c;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #f97316;
+    }
+    .btn-outline {
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: #14b8a6;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease forwards;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: #f9fafb;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+    .feature-card p {
+      color: #4b5563;
+    }
+    .cta {
+      background: linear-gradient(rgba(20, 184, 166, 0.9), rgba(5, 150, 105, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+      color: white;
+      text-align: center;
+    }
+    .cta input, .cta select {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .cta form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer a {
+      color: #cbd5e1;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: white;
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .hero span { font-size: 1.25rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
-<body class="bg-white flex flex-col items-center justify-center min-h-screen text-gray-900">
-  <main class="text-center p-6 max-w-xl fade-in">
-    <h1 class="text-4xl font-extrabold mb-4 text-indigo-700">Be the First to Join PerkTogether</h1>
-    <p class="mb-6 text-lg">We’re building something special. Sign up to get early access and exclusive updates.</p>
-    <form 
-  action="https://formspree.io/f/xayrkwzj" 
-  method="POST" 
-  class="w-full max-w-md mx-auto space-y-4"
->
-  <input 
-    type="email" 
-    name="email" 
-    id="email" 
-    required 
-    placeholder="Enter your email" 
-    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-300"
-  />
-  <!-- Redirect after successful submission -->
-  <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html" />
+<body>
+  <!-- Hero Partial -->
+  <div class="hero">
+    <div>
+      <h1>Transform Everyday Actions into <span style="color: #fb923c;">Regenerative Impact</span></h1>
+      <span>Starting in Hawaii</span>
+      <p>Earn rewards for supporting local eco-businesses. Businesses gain visibility + verified impact reporting.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
+      <button class="btn btn-outline" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Partner With Us</button>
+    </div>
+  </div>
 
-  <button 
-    type="submit" 
-    class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition"
-  >
-    Sign Up for Early Access
-  </button>
-</form>
+  <!-- Features Partial -->
+  <section>
+    <h2 class="section-title">Sustainability is Fragmented. We Fix It.</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Problem #1</h3>
+        <p>No platform connects consumer actions → business impact → corporate reporting.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Problem #2</h3>
+        <p>Local eco-businesses struggle for visibility; corporations face greenwashing distrust.</p>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <section>
+    <h2 class="section-title">One Platform. Complete Impact.</h2>
+    <div class="features">
+      <div class="feature-card">
+        <i class="fas fa-leaf fa-2x" style="color: #059669;"></i>
+        <h3>Impact Directory</h3>
+        <p>Discover & support verified local businesses.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-sync fa-2x" style="color: #2563eb;"></i>
+        <h3>Action Rewards</h3>
+        <p>Earn points for shopping/volunteering.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-chart-bar fa-2x" style="color: #7c3aed;"></i>
+        <h3>Sustainability Dashboard</h3>
+        <p>Track your $ kept local, waste removed.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-gift fa-2x" style="color: #fb7185;"></i>
+        <h3>Perks Marketplace</h3>
+        <p>Redeem points for whale-watching tours.</p>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    const form = document.getElementById('early-access-form');
-    const emailInput = document.getElementById('email');
-    const responseMessage = document.getElementById('form-response');
+  <!-- CTA + Form Partial -->
+  <section id="waitlist" class="cta">
+    <h2 class="section-title">Be the first to join Hawaii's regenerative movement!</h2>
+    <p>Get early access and help us launch the future of sustainable impact in Hawaii.</p>
+    <form action="mailto:devang@perktogether.com" method="POST" enctype="text/plain">
+      <input type="email" name="email" placeholder="Your Email Address" required />
+      <select name="userType" required>
+        <option value="">I'm a...</option>
+        <option value="consumer">Consumer</option>
+        <option value="business">Business</option>
+        <option value="partner">Corporate Partner</option>
+      </select>
+      <button class="btn btn-primary" type="submit">Sign Up for Early Access</button>
+    </form>
+  </section>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const email = emailInput.value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!emailRegex.test(email)) {
-        responseMessage.textContent = "Please enter a valid email address.";
-        responseMessage.className = "text-red-600";
-        return;
-      }
-
-      try {
-        const res = await fetch("https://formspree.io/f/xayrkwzj", {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({ email })
-        });
-
-        if (res.ok) {
-          window.location.href = "/thank-you.html";
-        } else {
-          responseMessage.textContent = "Something went wrong. Please try again later.";
-          responseMessage.className = "text-red-600";
-        }
-      } catch (error) {
-        responseMessage.textContent = "Network error. Please try again later.";
-        responseMessage.className = "text-red-600";
-      }
-    });
-  </script>
+  <!-- Footer Partial -->
+  <footer>
+    <p>© 2024 PerkTogether - Hawaii Chapter. All rights reserved.</p>
+    <div>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
 </body>
 </html>
