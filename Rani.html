@@ -805,25 +805,6 @@
     }
 
 
-
-     // Add a simple animation to the steps on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const steps = document.querySelectorAll('.step');
-            steps.forEach((step, index) => {
-                setTimeout(() => {
-                    step.style.opacity = '0';
-                    step.style.transform = index === 0 || index === 2 ? 
-                        'translateX(-50%) scale(0.8)' : 
-                        'translateY(-50%) scale(0.8)';
-                    step.offsetHeight; // Trigger reflow
-                    step.style.transition = 'all 0.5s ease-out';
-                    step.style.opacity = '1';
-                    step.style.transform = index === 0 || index === 2 ? 
-                        'translateX(-50%)' : 
-                        'translateY(-50%)';
-                }, 300 * index);
-            });
-        });
   </script>
 </body>
 </html>
