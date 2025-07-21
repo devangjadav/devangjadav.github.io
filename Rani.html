@@ -2,109 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PerkTogether – Purpose in Every Purchase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PerkTogether - Purpose in every action</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: white;
+      color: #1f2937;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+      padding: 20px;
     }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 40px 20px;
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .text-center {
       text-align: center;
     }
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 2em;
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
-    header p {
-      font-size: 1.2em;
+    .subtitle {
+      font-size: 1.25rem;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 2rem;
     }
-    section {
-      padding: 30px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .journey {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-    }
-    .journey h2 {
-      color: #4CAF50;
-      margin-top: 0;
-    }
-    .journey ul {
-      padding-left: 20px;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
+    .button {
+      background-color: #059669;
+      color: white;
+      padding: 0.75rem 1.5rem;
       border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
     }
-    footer {
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
+      width: 250px;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
-      }
-      iframe {
-        height: 700px;
-      }
+    .card img {
+      height: 48px;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .logo-strip img {
+      height: 48px;
+      margin: 0.5rem;
     }
   </style>
 </head>
 <body>
+  <main>
+    <section class="text-center">
+      <h1 class="title">PerkTogether</h1>
+      <p class="subtitle">Turn everyday sustainable actions into rewards. Connect, act, and grow a greener community.</p>
+      <button class="button">Join the Movement</button>
+      <div class="text-center" style="margin-top: 2rem;">
+        <img src="/images/earth-heart.png" alt="Sustainable Community" style="height: 160px;" />
+      </div>
+    </section>
 
-<header>
-  <h1>PerkTogether</h1>
-  <p>Turn everyday purchases into collective action for a better Hawaiʻi — where local businesses, eco-conscious users, and nonprofits grow together.</p>
-</header>
+    <section class="grid" style="margin-top: 4rem;">
+      <div class="card">
+        <img src="/icons/consumer.svg" alt="Consumers">
+        <h2 class="section-title">Consumers</h2>
+        <p>Earn perks for eco-friendly choices.</p>
+      </div>
+      <div class="card">
+        <img src="/icons/business.svg" alt="Businesses">
+        <h2 class="section-title">Businesses</h2>
+        <p>Attract green-minded customers.</p>
+      </div>
+      <div class="card">
+        <img src="/icons/community.svg" alt="Communities">
+        <h2 class="section-title">Communities</h2>
+        <p>Strengthen local impact together.</p>
+      </div>
+      <div class="card">
+        <img src="/icons/partner.svg" alt="Industry Partners">
+        <h2 class="section-title">Partners</h2>
+        <p>Collaborate for scalable impact.</p>
+      </div>
+    </section>
 
-<section class="journey">
-  <h2>How It Works</h2>
-  <ul>
-    <li><strong>Shop local:</strong> Buy from Hawaiʻi businesses offering PerkTogether perks.</li>
-    <li><strong>Give back:</strong> A portion goes to a local cause or nonprofit you choose.</li>
-    <li><strong>Track impact:</strong> See the ripple effect of your support in real-time.</li>
-  </ul>
-</section>
+    <section class="text-center" style="margin-top: 4rem;">
+      <h2 class="section-title">Our Partners</h2>
+      <p>Driving sustainable innovation together.</p>
+      <div class="logo-strip">
+        <img src="/logos/partner1.png" alt="Partner 1">
+        <img src="/logos/partner2.png" alt="Partner 2">
+        <img src="/logos/partner3.png" alt="Partner 3">
+        <img src="/logos/partner4.png" alt="Partner 4">
+      </div>
+      <button class="button" style="margin-top: 1.5rem;">Become a Partner</button>
+    </section>
 
-<section class="journey">
-  <h2>Why Join the Waitlist?</h2>
-  <ul>
-    <li>Get early access to exclusive perks and deals.</li>
-    <li>Help shape the future of giving in Hawaiʻi.</li>
-    <li>Support businesses and nonprofits that align with your values.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Join Our Waitlist</h2>
-  <p>We're building something special and would love for you to be part of it. Sign up and we’ll keep you posted!</p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfM5IpKZz3YtdlRKRjSFK78OY5JINeUOs2cxHR5MJz-mZsniw/viewform?embedded=true" loading="lazy">
-    Loading…
-  </iframe>
-</section>
-
-<footer>
-  © 2025 PerkTogether | Built with aloha in Hawaiʻi
-</footer>
-
+    <section class="text-center" style="margin-top: 4rem;">
+      <h2 class="section-title">Let’s Grow Together</h2>
+      <p>Join the platform where sustainability meets community.</p>
+      <button class="button" style="margin-top: 1rem;">Contact Us</button>
+    </section>
+  </main>
 </body>
 </html>
 
