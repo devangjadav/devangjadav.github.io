@@ -1,70 +1,111 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PerkTogether – Purpose in Every Purchase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
+    }
+    header p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    section {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .journey {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .journey h2 {
+      color: #4CAF50;
+      margin-top: 0;
+    }
+    .journey ul {
+      padding-left: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      iframe {
+        height: 700px;
+      }
+    }
+  </style>
+</head>
+<body>
 
-export default function PerkTogether() {
-  return (
-    <main className="min-h-screen bg-white text-gray-900 p-6">
-      <section className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Perk Together</h1>
-        <p className="text-lg max-w-2xl mx-auto">
-          The sustainability rewards platform that brings communities together. Earn perks for everyday sustainable actions and support local businesses, nonprofits, and climate projects.
-        </p>
-        <Button className="mt-6">Join the Movement</Button>
-      </section>
+<header>
+  <h1>PerkTogether</h1>
+  <p>Turn everyday purchases into collective action for a better Hawaiʻi — where local businesses, eco-conscious users, and nonprofits grow together.</p>
+</header>
 
-      <section className="grid gap-8 md:grid-cols-4">
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-2">For Consumers</h2>
-            <p>Earn points for sustainable actions like shopping local, recycling, or choosing eco-friendly travel. Redeem for perks or donate to causes you care about.</p>
-          </CardContent>
-        </Card>
+<section class="journey">
+  <h2>How It Works</h2>
+  <ul>
+    <li><strong>Shop local:</strong> Buy from Hawaiʻi businesses offering PerkTogether perks.</li>
+    <li><strong>Give back:</strong> A portion goes to a local cause or nonprofit you choose.</li>
+    <li><strong>Track impact:</strong> See the ripple effect of your support in real-time.</li>
+  </ul>
+</section>
 
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-2">For Businesses</h2>
-            <p>Attract conscious customers, track sustainability impact, and showcase your green leadership. Simple, plug-and-play integration.</p>
-          </CardContent>
-        </Card>
+<section class="journey">
+  <h2>Why Join the Waitlist?</h2>
+  <ul>
+    <li>Get early access to exclusive perks and deals.</li>
+    <li>Help shape the future of giving in Hawaiʻi.</li>
+    <li>Support businesses and nonprofits that align with your values.</li>
+  </ul>
+</section>
 
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-2">For Communities</h2>
-            <p>Perk Together helps grow local economies while reducing environmental footprint—rewarding behaviors that help build a regenerative future.</p>
-          </CardContent>
-        </Card>
+<section>
+  <h2>Join Our Waitlist</h2>
+  <p>We're building something special and would love for you to be part of it. Sign up and we’ll keep you posted!</p>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfM5IpKZz3YtdlRKRjSFK78OY5JINeUOs2cxHR5MJz-mZsniw/viewform?embedded=true" loading="lazy">
+    Loading…
+  </iframe>
+</section>
 
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-2">For Industry Partners</h2>
-            <p>Collaborate with us to scale climate solutions, support ESG initiatives, and activate sustainable consumer ecosystems across your networks and supply chains.</p>
-          </CardContent>
-        </Card>
-      </section>
+<footer>
+  © 2025 PerkTogether | Built with aloha in Hawaiʻi
+</footer>
 
-      <section className="mt-16 text-center">
-        <h2 className="text-2xl font-bold mb-4">Our Industry Partners</h2>
-        <p className="max-w-xl mx-auto mb-6">
-          We're proud to work alongside forward-thinking organizations driving sustainable innovation and community impact.
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 mb-10">
-          <img src="/logos/partner1.png" alt="Partner 1" className="h-12" />
-          <img src="/logos/partner2.png" alt="Partner 2" className="h-12" />
-          <img src="/logos/partner3.png" alt="Partner 3" className="h-12" />
-          <img src="/logos/partner4.png" alt="Partner 4" className="h-12" />
-        </div>
-        <Button>Become a Partner</Button>
-      </section>
+</body>
+</html>
 
-      <section className="mt-16 text-center">
-        <h2 className="text-2xl font-bold mb-4">Let’s Build a Greener Future—Together</h2>
-        <p className="max-w-xl mx-auto mb-6">
-          Whether you’re a local business, nonprofit, traveler, or resident—Perk Together makes it easy to connect, act, and grow sustainably.
-        </p>
-        <Button>Contact Us</Button>
-      </section>
-    </main>
-  );
-}
 
