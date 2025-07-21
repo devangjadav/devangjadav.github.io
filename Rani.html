@@ -392,39 +392,29 @@
 }
 
 
+.journey-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-      .flow-container {
-      max-width: 500px;
-      margin: auto;
-    }
+.journey-step {
+  flex: 1 1 120px;
+  min-width: 120px;
+}
 
-    .step {
-      position: relative;
-      background: white;
-      border: 2px solid #4CAF50;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #333;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
+.journey-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: popIn 0.5s ease;
+}
 
-    .arrow {
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-top: 20px solid #4CAF50;
-      margin: -10px auto 10px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      color: #222;
-      margin-bottom: 30px;
-    }
+     
      </style>
     
 </head>
@@ -460,28 +450,37 @@
     </div>
   </section>
 
-  <div class="flow-container">
-    <h2>How PerkTogether Works</h2>
-
-    <div class="step">You</div>
-    <div class="arrow"></div>
-
-    <div class="step">Take Action</div>
-    <div class="arrow"></div>
-
-    <div class="step">Local Biz Grows</div>
-    <div class="arrow"></div>
-
-    <div class="step">Impact Verified</div>
-    <div class="arrow"></div>
-
-    <div class="step">You Earn Perks</div>
-    <div class="arrow"></div>
-
-    <div class="step">Redeem Perks</div>
+<section>
+    <h2 class="section-title">One Platform. Complete Impact.</h2>
+    <section class="journey">
+  <h2 class="section-title">How PerkTogether Works</h2>
+  <div class="journey-container">
+    <div class="journey-step">
+      <div class="journey-icon">🧍‍♀️</div>
+      <p>You</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">💪</div>
+      <p>Take Action</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">🏪</div>
+      <p>Local Biz Grows</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">📊</div>
+      <p>Impact Verified</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="journey-step">
+      <div class="journey-icon">🎁</div>
+      <p>You Earn Perks</p>
+    </div>
   </div>
-
-
+</section>
 
 
   
