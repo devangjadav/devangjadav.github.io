@@ -393,57 +393,55 @@
 
 
 
-        .circle-flow {
+    .circle-container {
+      width: 90vw;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
       position: relative;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      margin: auto;
+      animation: rotate 60s linear infinite;
     }
 
-    .circle-flow .step {
+    .step {
       position: absolute;
-      width: 120px;
+      width: 30%;
+      min-width: 90px;
+      aspect-ratio: 1 / 1;
+      background-color: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
       text-align: center;
-      font-size: 14px;
-      background-color: #fff;
       padding: 10px;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    .circle-flow .step::after {
-      content: '→';
-      position: absolute;
-      font-size: 20px;
-      top: 50%;
-      left: 100%;
-      transform: translate(-50%, -50%);
+    /* Position each step using % and transform */
+    .step1 { top: 0%; left: 50%; transform: translate(-50%, 0); }
+    .step2 { top: 18%; left: 85%; transform: translate(-50%, -50%); }
+    .step3 { top: 65%; left: 90%; transform: translate(-50%, -50%); }
+    .step4 { top: 90%; left: 50%; transform: translate(-50%, -100%); }
+    .step5 { top: 65%; left: 10%; transform: translate(-50%, -50%); }
+    .step6 { top: 18%; left: 15%; transform: translate(-50%, -50%); }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    /* Position each step around a circle using trigonometry (360° / 6 steps = 60° apart) */
-    .step1 { top: 0%; left: 50%; transform: translate(-50%, -50%); }
-    .step2 { top: 20%; left: 85%; transform: translate(-50%, -50%); }
-    .step3 { top: 60%; left: 90%; transform: translate(-50%, -50%); }
-    .step4 { top: 90%; left: 50%; transform: translate(-50%, -50%); }
-    .step5 { top: 60%; left: 10%; transform: translate(-50%, -50%); }
-    .step6 { top: 20%; left: 15%; transform: translate(-50%, -50%); }
-
-    /* Remove arrow from last step */
-    .step6::after {
-      display: none;
+    /* Optional: Make text stay upright */
+    .step span {
+      display: block;
+      transform: rotate(-360deg); /* counter-rotate text */
     }
 
-    /* Connectors (optional, for visual flow) */
-    .circle-flow svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 400px;
-      height: 400px;
-      z-index: -1;
+    @media (max-width: 400px) {
+      .step {
+        font-size: 0.75rem;
+        padding: 6px;
+      }
     }
-
     
      </style>
     
@@ -480,13 +478,13 @@
     </div>
   </section>
 
-<div class="circle-flow">
-    <div class="step step1">You</div>
-    <div class="step step2">Take Action</div>
-    <div class="step step3">Local Biz Grows</div>
-    <div class="step step4">Impact Verified</div>
-    <div class="step step5">You Earn Perks</div>
-    <div class="step step6">Redeem Perks</div>
+  <div class="circle-container">
+    <div class="step step1"><span>You</span></div>
+    <div class="step step2"><span>Take Action</span></div>
+    <div class="step step3"><span>Local Biz Grows</span></div>
+    <div class="step step4"><span>Impact Verified</span></div>
+    <div class="step step5"><span>You Earn Perks</span></div>
+    <div class="step step6"><span>Redeem Perks</span></div>
   </div>
   
 
