@@ -1,124 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PerkTogether - Purpose in every action</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PerkTogether – Eco Perks for All</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: white;
-      color: #1f2937;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      line-height: 1.6;
+      background: #f6f9f7;
+      color: #2b2b2b;
     }
-    main {
-      max-width: 1200px;
+
+    header {
+      background: #014737;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 900px;
       margin: 0 auto;
     }
-    .text-center {
-      text-align: center;
-    }
-    .title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .subtitle {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .button {
-      background-color: #059669;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      text-align: center;
-      width: 250px;
-    }
-    .card img {
-      height: 48px;
-      margin-bottom: 1rem;
-    }
+
     .section-title {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 1rem;
+      margin-top: 2rem;
+      color: #014737;
     }
-    .logo-strip img {
-      height: 48px;
-      margin: 0.5rem;
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #014737;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 1.5rem;
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="text-center">
-      <h1 class="title">PerkTogether</h1>
-      <p class="subtitle">Turn everyday sustainable actions into rewards. Connect, act, and grow a greener community.</p>
-      <button class="button">Join the Movement</button>
-      <div class="text-center" style="margin-top: 2rem;">
-        <img src="/images/earth-heart.png" alt="Sustainable Community" style="height: 160px;" />
-      </div>
-    </section>
+  <header>
+    <h1>PerkTogether</h1>
+    <p>Get rewarded for making eco-friendly choices. We connect people, businesses, and communities to amplify sustainable impact — together.</p>
+  </header>
 
-    <section class="grid" style="margin-top: 4rem;">
+  <section class="section">
+    <h2 class="section-title">Who Is PerkTogether For?</h2>
+    <div class="card-container">
       <div class="card">
-        <img src="/icons/consumer.svg" alt="Consumers">
-        <h2 class="section-title">Consumers</h2>
-        <p>Earn perks for eco-friendly choices.</p>
+        <h3>🌿 Consumers</h3>
+        <p>Earn perks by shopping at eco-conscious businesses and supporting local sustainability efforts.</p>
       </div>
       <div class="card">
-        <img src="/icons/business.svg" alt="Businesses">
-        <h2 class="section-title">Businesses</h2>
-        <p>Attract green-minded customers.</p>
+        <h3>🏪 Businesses</h3>
+        <p>Grow your customer base and brand loyalty by offering green rewards and joining a values-driven network.</p>
       </div>
       <div class="card">
-        <img src="/icons/community.svg" alt="Communities">
-        <h2 class="section-title">Communities</h2>
-        <p>Strengthen local impact together.</p>
+        <h3>🤝 Communities</h3>
+        <p>Bring residents and businesses together through neighborhood cleanups, donation drives, and events that matter.</p>
       </div>
       <div class="card">
-        <img src="/icons/partner.svg" alt="Industry Partners">
-        <h2 class="section-title">Partners</h2>
-        <p>Collaborate for scalable impact.</p>
+        <h3>📈 Partners</h3>
+        <p>Join us as we pilot PerkTogether in Hawai‘i. Collaborate on rewards, tracking, and environmental impact.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="text-center" style="margin-top: 4rem;">
-      <h2 class="section-title">Our Partners</h2>
-      <p>Driving sustainable innovation together.</p>
-      <div class="logo-strip">
-        <img src="/logos/partner1.png" alt="Partner 1">
-        <img src="/logos/partner2.png" alt="Partner 2">
-        <img src="/logos/partner3.png" alt="Partner 3">
-        <img src="/logos/partner4.png" alt="Partner 4">
-      </div>
-      <button class="button" style="margin-top: 1.5rem;">Become a Partner</button>
-    </section>
+  <section class="section">
+    <h2 class="section-title">Join Our Waitlist</h2>
+    <p>We're kicking off in Hawai‘i. Add your name below to be part of the first wave of PerkTogether changemakers.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd9gZNLmhW06XMBccKZAPVPpWYZ1yW-7pshV6Z7uYPKYOKV_g/viewform?embedded=true" loading="lazy">Loading…</iframe>
+  </section>
 
-    <section class="text-center" style="margin-top: 4rem;">
-      <h2 class="section-title">Let’s Grow Together</h2>
-      <p>Join the platform where sustainability meets community.</p>
-      <button class="button" style="margin-top: 1rem;">Contact Us</button>
-    </section>
-  </main>
+  <footer>
+    © 2025 PerkTogether. All rights reserved.
+  </footer>
 </body>
 </html>
+
 
 
