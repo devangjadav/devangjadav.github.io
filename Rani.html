@@ -400,61 +400,37 @@
 
 
 
-       .workflow {
+      .flow-container {
       max-width: 500px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .workflow h2 {
-      font-size: 24px;
-      margin-bottom: 30px;
-      color: #0c5c47;
+      margin: auto;
     }
 
     .step {
+      position: relative;
       background: white;
-      border-radius: 16px;
+      border: 2px solid #4CAF50;
+      border-radius: 12px;
       padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
-    .icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 20px solid #4CAF50;
+      margin: -10px auto 10px;
     }
 
-    .text {
-      text-align: left;
-    }
-
-    .text h3 {
-      margin: 0 0 5px;
-      font-size: 16px;
-      color: #0c5c47;
-    }
-
-    .text p {
-      margin: 0;
-      font-size: 14px;
-      color: #666;
-    }
-
-    @media (max-width: 500px) {
-      .step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .text {
-        text-align: center;
-      }
+    h2 {
+      font-size: 1.5rem;
+      color: #222;
+      margin-bottom: 30px;
     }
      </style>
     
@@ -491,93 +467,26 @@
     </div>
   </section>
 
-  <div class="workflow">
+  <div class="flow-container">
     <h2>How PerkTogether Works</h2>
 
-    <div class="step">
-      <div class="icon">
-        <!-- You (User) Icon -->
-        <svg viewBox="0 0 64 64" fill="#0c5c47">
-          <circle cx="32" cy="20" r="12" />
-          <path d="M12 52c0-11 9-20 20-20s20 9 20 20H12z"/>
-        </svg>
-      </div>
-      <div class="text">
-        <h3>You</h3>
-        <p>Join the movement and explore eco-conscious options.</p>
-      </div>
-    </div>
+    <div class="step">You</div>
+    <div class="arrow"></div>
 
-    <div class="step">
-      <div class="icon">
-        <!-- Take Action Icon -->
-        <svg viewBox="0 0 64 64" fill="#0c5c47">
-          <path d="M32 12l8 20H24l8-20zM16 42h32v10H16z"/>
-        </svg>
-      </div>
-      <div class="text">
-        <h3>Take Action</h3>
-        <p>Support local eco-initiatives by choosing green options.</p>
-      </div>
-    </div>
+    <div class="step">Take Action</div>
+    <div class="arrow"></div>
 
-    <div class="step">
-      <div class="icon">
-        <!-- Local Biz Icon -->
-        <svg viewBox="0 0 64 64" fill="#0c5c47">
-          <rect x="10" y="24" width="44" height="30" rx="4"/>
-          <path d="M16 24v-8h10v8M38 24v-8h10v8"/>
-        </svg>
-      </div>
-      <div class="text">
-        <h3>Local Biz Grows</h3>
-        <p>Community businesses thrive through your support.</p>
-      </div>
-    </div>
+    <div class="step">Local Biz Grows</div>
+    <div class="arrow"></div>
 
-    <div class="step">
-      <div class="icon">
-        <!-- Verified Impact Icon -->
-        <svg viewBox="0 0 64 64" fill="#0c5c47">
-          <circle cx="32" cy="32" r="30" stroke="#0c5c47" stroke-width="4" fill="none"/>
-          <path d="M20 34l8 8 16-20" stroke="#0c5c47" stroke-width="4" fill="none"/>
-        </svg>
-      </div>
-      <div class="text">
-        <h3>Impact Verified</h3>
-        <p>Your action is tracked and confirmed by trusted partners.</p>
-      </div>
-    </div>
+    <div class="step">Impact Verified</div>
+    <div class="arrow"></div>
 
-    <div class="step">
-      <div class="icon">
-        <!-- Earn Perks Icon -->
-        <svg viewBox="0 0 64 64" fill="#0c5c47">
-          <circle cx="32" cy="32" r="12"/>
-          <path d="M12 32a20 20 0 0 1 40 0 20 20 0 0 1-40 0z"/>
-        </svg>
-      </div>
-      <div class="text">
-        <h3>You Earn Perks</h3>
-        <p>Get rewarded for your contributions to sustainability.</p>
-      </div>
-    </div>
+    <div class="step">You Earn Perks</div>
+    <div class="arrow"></div>
 
-    <div class="step">
-      <div class="icon">
-        <!-- Redeem Icon -->
-        <svg viewBox="0 0 64 64" fill="#0c5c47">
-          <path d="M12 20h40v24H12z"/>
-          <path d="M22 20v-6h20v6"/>
-        </svg>
-      </div>
-      <div class="text">
-        <h3>Redeem Perks</h3>
-        <p>Use your perks with participating local businesses.</p>
-      </div>
-    </div>
+    <div class="step">Redeem Perks</div>
   </div>
-  
 
 
 
