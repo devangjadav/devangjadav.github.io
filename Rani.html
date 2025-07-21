@@ -413,23 +413,28 @@
     <div class="card-container">
       <div class="card">
         <h3>🌿 Consumers</h3>
-        <p>Earn perks by shopping at eco-conscious businesses and supporting local sustainability efforts.</p>
+        <p>Earn perks for eco-friendly choices.</p>
       </div>
       <div class="card">
         <h3>🏪 Businesses</h3>
-        <p>Grow your customer base and brand loyalty by offering green rewards and joining a values-driven network.</p>
+        <p>Attract green-minded customers.</p>
       </div>
       <div class="card">
         <h3>🤝 Communities</h3>
-        <p>Bring residents and businesses together through neighborhood cleanups, donation drives, and events that matter.</p>
+        <p>Strenthen local impact together</p>
       </div>
       <div class="card">
         <h3>📈 Partners</h3>
-        <p>Join us as we pilot PerkTogether in Hawai‘i. Collaborate on rewards, tracking, and environmental impact.</p>
+        <p>Collaborate for scalable impact.</p>
       </div>
     </div>
   </section>
 
+  <section>
+    <h3>Our Partners</h3>
+    <p>Driving sustainable innovation together.</p>
+    <button class="btn btn-primary pulse" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Become Partner</button>
+  </section>
 
   <!-- Waitlist Form Section -->
   <section id="waitlist">
@@ -491,29 +496,6 @@
         timestamp: new Date().toISOString()
       };
       
-      // Send email using Formspree
-      fetch('https://formspree.io/f/xpwlqpdj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      })
-      .then(data => {
-        // Show success message
-        document.getElementById('success-message').style.display = 'block';
-        
-        // Reset form
-        document.getElementById('waitlist-form').reset();
-        
         // Scroll to confirmation
         document.getElementById('success-message').scrollIntoView({ 
           behavior: 'smooth', 
