@@ -415,6 +415,44 @@
   max-width: 180px;
   height: auto;
 }
+.circle-flow {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.circle-flow .step {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #0f172a;
+  animation: popIn 0.5s ease;
+}
+
+.step1 { top: -20px; left: 120px; }
+.step2 { top: 80px; right: -10px; }
+.step3 { bottom: 80px; right: -10px; }
+.step4 { bottom: -20px; left: 120px; }
+.step5 { bottom: 80px; left: -10px; }
+
+@media (max-width: 420px) {
+  .circle-flow {
+    transform: scale(0.8);
+  }
+}
 
   </style>
   
@@ -450,6 +488,33 @@
       </div>
     </div>
   </section>
+
+  <section class="journey">
+  <h2 class="section-title">How PerkTogether Works</h2>
+  <div class="circle-flow">
+    <div class="step step1">
+      <div class="journey-icon">🧍‍♀️</div>
+      <p>You</p>
+    </div>
+    <div class="step step2">
+      <div class="journey-icon">💪</div>
+      <p>Take Action</p>
+    </div>
+    <div class="step step3">
+      <div class="journey-icon">🏪</div>
+      <p>Local Biz Grows</p>
+    </div>
+    <div class="step step4">
+      <div class="journey-icon">📊</div>
+      <p>Impact Verified</p>
+    </div>
+    <div class="step step5">
+      <div class="journey-icon">🎁</div>
+      <p>You Earn Perks</p>
+    </div>
+  </div>
+</section>
+
    <section class="section">
     <div class="card-container">
       <div class="cardp">
