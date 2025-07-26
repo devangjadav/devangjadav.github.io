@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PerkTogether Blog - Troubleshooting Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Base styles from your original design */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f6f9f7;
+      color: #2b2b2b;
+    }
+    
+    .navbar {
+      background: #014737;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: white;
+    }
+    
+    header {
+      background: linear-gradient(rgba(20, 184, 166, 0.8), rgba(5, 150, 105, 0.8)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease;
+    }
+    
+    header p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 1rem auto 2rem;
+    }
+    
+    .section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #014737;
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    
+    .troubleshooting-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .issue-card {
+      background: #fff;
+      border-left: 4px solid #059669;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .issue-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .issue-card h3 {
+      margin-top: 0;
+      color: #014737;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .solution {
+      background: #f0fdfa;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      border-left: 3px solid #10b981;
+    }
+    
+    .solution h4 {
+      margin-top: 0;
+      color: #047857;
+    }
+    
+    .image-test {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 2rem 0;
+    }
+    
+    .image-box {
+      flex: 1;
+      min-width: 280px;
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .test-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+    }
+    
+    .image-status {
+      font-weight: 600;
+      padding: 0.5rem;
+      border-radius: 999px;
+    }
+    
+    .status-success {
+      background: #dcfce7;
+      color: #166534;
+    }
+    
+    .status-error {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    
+    .btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+    }
+    
+    .btn-primary {
+      background-color: #fb923c;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #f97316;
+      transform: scale(1.05);
+    }
+    
+    footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+    footer a {
+      color: #cbd5e1;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: white;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Debugging console */
+    .debug-console {
+      background: #1e293b;
+      color: #cbd5e1;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-family: monospace;
+      margin-top: 2rem;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    
+    .console-line {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .console-icon {
+      color: #10b981;
+    }
+    
+    .console-error {
+      color: #f87171;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="/" class="nav-logo">PerkTogether</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#waitlist">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Image Loading Troubleshooting</h1>
+    <p>Diagnosing why images work on mobile but not on desktop browsers</p>
+    <button class="btn btn-primary" onclick="runTests()">Run Diagnostic Tests</button>
+  </header>
+
+  <!-- Main Content -->
+  <div class="section">
+    <h2 class="section-title">Common Image Loading Issues</h2>
+    
+    <div class="card">
+      <h2>Diagnosing Desktop Image Issues</h2>
+      <p>If your images load on mobile but not on desktop, here are the most likely causes:</p>
+      
+      <div class="image-test">
+        <div class="image-box">
+          <div class="test-image" id="testImage1">
+            <span>Loading image from HTTPS source...</span>
+          </div>
+          <div class="image-status" id="status1">Not tested yet</div>
+          <p>HTTPS Image Test</p>
+        </div>
+        
+        <div class="image-box">
+          <div class="test-image" id="testImage2">
+            <span>Loading image from HTTP source...</span>
+          </div>
+          <div class="image-status" id="status2">Not tested yet</div>
+          <p>HTTP Image Test (should fail)</p>
+        </div>
+        
+        <div class="image-box">
+          <div class="test-image" id="testImage3">
+            <span>Loading relative path image...</span>
+          </div>
+          <div class="image-status" id="status3">Not tested yet</div>
+          <p>Relative Path Test</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="troubleshooting-grid">
+      <!-- Issue 1 -->
+      <div class="issue-card">
+        <h3><i class="fas fa-lock"></i> Mixed Content Blocking</h3>
+        <p>If your site uses HTTPS but your images are served over HTTP, modern browsers will block them.</p>
+        <div class="solution">
+          <h4>Solution:</h4>
+          <p>Ensure all images use HTTPS URLs:</p>
+          <pre>&lt;img src="<mark>https</mark>://example.com/image.jpg"&gt;</pre>
+          <p>Check browser console for "Mixed Content" errors.</p>
+        </div>
+      </div>
+      
+      <!-- Issue 2 -->
+      <div class="issue-card">
+        <h3><i class="fas fa-folder-open"></i> Incorrect Paths</h3>
+        <p>Desktop browsers may interpret relative paths differently than mobile browsers.</p>
+        <div class="solution">
+          <h4>Solution:</h4>
+          <p>Use absolute paths for images:</p>
+          <pre>&lt;img src="/blog/images/photo.jpg"&gt;</pre>
+          <p>Double-check case sensitivity (Linux servers are case-sensitive).</p>
+        </div>
+      </div>
+      
+      <!-- Issue 3 -->
+      <div class="issue-card">
+        <h3><i class="fas fa-desktop"></i> Desktop-Specific CSS</h3>
+        <p>CSS rules in desktop media queries might be hiding images or affecting their display.</p>
+        <div class="solution">
+          <h4>Solution:</h4>
+          <p>Inspect the image element in desktop browser:</p>
+          <ol>
+            <li>Right-click image → "Inspect"</li>
+            <li>Check if image has display: none</li>
+            <li>Check computed width/height values</li>
+          </ol>
+        </div>
+      </div>
+      
+      <!-- Issue 4 -->
+      <div class="issue-card">
+        <h3><i class="fas fa-shield-alt"></i> Ad Blockers/Extensions</h3>
+        <p>Desktop browsers often have extensions that block images, especially if they contain certain keywords.</p>
+        <div class="solution">
+          <h4>Solution:</h4>
+          <ol>
+            <li>Test in incognito mode</li>
+            <li>Disable extensions one by one</li>
+            <li>Check if image URLs contain words like "ad" or "banner"</li>
+          </ol>
+        </div>
+      </div>
+      
+      <!-- Issue 5 -->
+      <div class="issue-card">
+        <h3><i class="fas fa-sync-alt"></i> Cache Issues</h3>
+        <p>Desktop browsers may have cached broken image references or outdated CSS.</p>
+        <div class="solution">
+          <h4>Solution:</h4>
+          <ol>
+            <li>Hard refresh (Ctrl + F5 or Cmd + Shift + R)</li>
+            <li>Clear browser cache</li>
+            <li>Check if issue persists in a different browser</li>
+          </ol>
+        </div>
+      </div>
+      
+      <!-- Issue 6 -->
+      <div class="issue-card">
+        <h3><i class="fas fa-server"></i> Server Configuration</h3>
+        <p>Desktop browsers may receive different responses from server based on user-agent.</p>
+        <div class="solution">
+          <h4>Solution:</h4>
+          <ol>
+            <li>Check server access logs for image requests</li>
+            <li>Verify proper Content-Type headers</li>
+            <li>Test with different user-agents using developer tools</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Debug Console -->
+    <div class="card">
+      <h2>Diagnostic Console</h2>
+      <div class="debug-console" id="debugConsole">
+        <div class="console-line"><i class="fas fa-terminal console-icon"></i> Console ready. Click "Run Diagnostic Tests" to start.</div>
+      </div>
+    </div>
+    
+    <!-- Fix Instructions -->
+    <div class="card">
+      <h2>Step-by-Step Fixes</h2>
+      <div class="solution">
+        <h4>Immediate Steps to Resolve:</h4>
+        <ol>
+          <li><strong>Check browser console</strong> for errors (F12 in most browsers)</li>
+          <li><strong>Verify image URLs</strong> - right-click broken image → "Open image in new tab"</li>
+          <li><strong>Test with absolute URLs</strong> instead of relative paths</li>
+          <li><strong>Inspect CSS</strong> on desktop to ensure images aren't being hidden</li>
+          <li><strong>Clear cache</strong> and test in incognito mode</li>
+        </ol>
+      </div>
+      
+      <div class="solution" style="margin-top: 1.5rem; background: #fffbeb; border-left-color: #f59e0b;">
+        <h4><i class="fas fa-lightbulb"></i> Pro Tip: Image Optimization</h4>
+        <p>While fixing loading issues, optimize your images:</p>
+        <ul>
+          <li>Use modern formats like WebP</li>
+          <li>Compress images with tools like Squoosh.app</li>
+          <li>Implement responsive images with srcset</li>
+          <li>Add lazy loading: &lt;img loading="lazy"&gt;</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#waitlist">Join Waitlist</a>
+      <a href="mailto:devang@perktogether.com">Contact</a>
+    </div>
+    <div>© 2025 PerkTogether. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function runTests() {
+      const console = document.getElementById('debugConsole');
+      console.innerHTML = '';
+      
+      function log(message, isError = false) {
+        const line = document.createElement('div');
+        line.className = 'console-line';
+        line.innerHTML = `<i class="fas fa-${isError ? 'times-circle console-error' : 'check-circle console-icon'}"></i> ${message}`;
+        console.appendChild(line);
+        console.scrollTop = console.scrollHeight;
+      }
+      
+      log('Starting image diagnostic tests...');
+      
+      // Test 1: HTTPS image
+      const testImage1 = new Image();
+      testImage1.onload = function() {
+        document.getElementById('testImage1').innerHTML = '<i class="fas fa-check-circle" style="font-size: 3rem; color: #10b981;"></i>';
+        document.getElementById('status1').textContent = 'Loaded successfully!';
+        document.getElementById('status1').className = 'image-status status-success';
+        log('HTTPS image loaded successfully');
+      };
+      testImage1.onerror = function() {
+        document.getElementById('testImage1').innerHTML = '<i class="fas fa-times-circle" style="font-size: 3rem; color: #ef4444;"></i>';
+        document.getElementById('status1').textContent = 'Failed to load';
+        document.getElementById('status1').className = 'image-status status-error';
+        log('HTTPS image failed to load. Check mixed content issues.', true);
+      };
+      testImage1.src = 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
+      
+      // Test 2: HTTP image (should fail)
+      const testImage2 = new Image();
+      testImage2.onload = function() {
+        document.getElementById('testImage2').innerHTML = '<i class="fas fa-check-circle" style="font-size: 3rem; color: #10b981;"></i>';
+        document.getElementById('status2').textContent = 'Loaded successfully!';
+        document.getElementById('status2').className = 'image-status status-success';
+        log('HTTP image loaded - your site may not be enforcing HTTPS', true);
+      };
+      testImage2.onerror = function() {
+        document.getElementById('testImage2').innerHTML = '<i class="fas fa-times-circle" style="font-size: 3rem; color: #ef4444;"></i>';
+        document.getElementById('status2').textContent = 'Blocked (expected)';
+        document.getElementById('status2').className = 'image-status status-error';
+        log('HTTP image blocked as expected (good)');
+      };
+      testImage2.src = 'http://via.placeholder.com/600x400';
+      
+      // Test 3: Relative path image
+      const testImage3 = new Image();
+      testImage3.onload = function() {
+        document.getElementById('testImage3').innerHTML = '<i class="fas fa-check-circle" style="font-size: 3rem; color: #10b981;"></i>';
+        document.getElementById('status3').textContent = 'Loaded successfully!';
+        document.getElementById('status3').className = 'image-status status-success';
+        log('Relative path image loaded successfully');
+      };
+      testImage3.onerror = function() {
+        document.getElementById('testImage3').innerHTML = '<i class="fas fa-times-circle" style="font-size: 3rem; color: #ef4444;"></i>';
+        document.getElementById('status3').textContent = 'Failed to load';
+        document.getElementById('status3').className = 'image-status status-error';
+        log('Relative path image failed. Check your image paths and case sensitivity.', true);
+      };
+      testImage3.src = 'https://perktogether.com/blog/images/sample-image.jpg';
+      
+      // Additional diagnostic info
+      setTimeout(() => {
+        log('Checking browser capabilities...');
+        log(`User Agent: ${navigator.userAgent}`);
+        log(`Browser: ${getBrowserName()}`);
+        log(`Cookies Enabled: ${navigator.cookieEnabled ? 'Yes' : 'No'}`);
+        log(`Online Status: ${navigator.onLine ? 'Online' : 'Offline'}`);
+        log(`Screen Resolution: ${screen.width}x${screen.height}`);
+        log('Diagnostic tests complete!');
+      }, 1500);
+    }
+    
+    function getBrowserName() {
+      const userAgent = navigator.userAgent;
+      if (userAgent.includes('Firefox')) return 'Mozilla Firefox';
+      if (userAgent.includes('Edg')) return 'Microsoft Edge';
+      if (userAgent.includes('Chrome')) return 'Google Chrome';
+      if (userAgent.includes('Safari')) return 'Apple Safari';
+      return 'Unknown Browser';
+    }
+  </script>
+</body>
+</html>
